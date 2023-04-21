@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:autoTransition="animateToEnd"
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="5000">
+       <KeyFrameSet>
+           <KeyAttribute
+               motion:motionTarget="@id/ball"
+               motion:framePosition="10"
+               android:alpha="100"/>
+           <KeyAttribute
+               motion:motionTarget="@id/ball"
+               motion:framePosition="20"
+               android:alpha="100"/>
+           <KeyAttribute
+               motion:motionTarget="@id/ball"
+               motion:framePosition="30"
+               android:alpha="100"/>
+           <KeyAttribute
+               motion:motionTarget="@id/ball"
+               motion:framePosition="40"
+               android:alpha="100"/>
+           <KeyAttribute
+               motion:motionTarget="@id/ball"
+               motion:framePosition="50"
+               android:alpha="100"/>
+           <KeyAttribute
+               motion:motionTarget="@id/ball"
+               motion:framePosition="60"
+               android:alpha="100"/>
+           <KeyAttribute
+               motion:motionTarget="@id/ball"
+               motion:framePosition="70"
+               android:alpha="100"/>
+           <KeyAttribute
+               motion:motionTarget="@id/ball"
+               motion:framePosition="75"
+               android:alpha="20"/>
+           <KeyAttribute
+               motion:motionTarget="@id/ball"
+               motion:framePosition="80"
+               android:alpha="10"/>
+           <KeyAttribute
+           motion:motionTarget="@id/ball"
+           motion:framePosition="95"
+           android:alpha="0"/>
+           <KeyAttribute
+               motion:motionTarget="@id/ball"
+               motion:framePosition="100"
+               android:alpha="0"/>
+
+       </KeyFrameSet>
+    </Transition>
+    <Transition
+        motion:autoTransition="animateToStart"
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000"/>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:layout_height="40dp"
+            android:layout_width="40dp"
+            android:id="@+id/ball"
+            motion:layout_constraintEnd_toEndOf="@+id/field"
+            motion:layout_constraintStart_toStartOf="@+id/field"
+            motion:layout_editor_absoluteX="185dp"
+            motion:layout_constraintBottom_toBottomOf="@+id/field"
+            motion:layout_editor_absoluteY="594dp" />
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/end">
+        <Constraint android:id="@id/ball">
+            <Layout
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                motion:layout_constraintBottom_toTopOf="@+id/point"/>
+        </Constraint>
+    </ConstraintSet>
+</MotionScene>
